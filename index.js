@@ -20,6 +20,7 @@ async function f1(x){
 };
 
 try {
+    
     let y = f1("testando");
     y.then(v => {
         console.log("then...",v)
@@ -27,11 +28,17 @@ try {
     });
     console.log("a var da promise aqui é: ", y);
 
-    let z = f1("r");
-    console.log("var da promise que ser rejeitada:", z);
+    // let z = f1("r");
+    // console.log("var da promise que ser rejeitada:", z);
 
 } catch(ex){
     console.log("exception...", ex);
 }
+
+( async () => {
+    console.log("novo ok");
+    return true;
+})()
+    .then(v => { console.log("async teste", v); });
 
 console.log("finalizando...");
